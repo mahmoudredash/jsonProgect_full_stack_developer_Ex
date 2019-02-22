@@ -1,0 +1,41 @@
+
+<div class="continar"><br>
+<br><h3 class="indigo-text text-darken-4 text-darken-3 center"> Update  POST</h3>
+    <br><br>
+    <div class="row">
+    <form class="col s12" method='post' action="/admin/postes/update/<%=datap._id%>">
+        <div class="row">
+        <div class="input-field col s6">
+            <input id="input_text" name="title" type="text" value="<%=datap.title%>" data-length="150">
+            <label for="input_text">Title Post</label>
+        </div>
+        <div class=" input-field col s6">
+            <input id="input_text" name="departm" value="General news about conferences" type="text">
+            
+            <label for="input_text">DepartMent</label>
+        </div>
+        </div>
+        
+        <div class="row">
+        <label for='edit' style="font-size:20px; " >Body</label>
+        <div class="input-field col s12">
+            <textarea id='edit' name="body" class="materialize-textarea" data-length="6000" ></textarea>
+        </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input type="submit" name="addpost" value="Update Post" class="waves-effect waves-light btn">
+            </div>
+        </div>
+    </form>
+    </div>     
+    
+</div>
+</div>
+
+ <script>
+    CKEDITOR.replace( 'edit' );
+ 
+ </script>
+
+ <!--        // document.getElementById('edit').innerText = "<%= datap.body%>";-->

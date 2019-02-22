@@ -1,0 +1,136 @@
+</div> 
+ <div id="editor">
+      <div id='edit' style="margin-top: 30px;">
+        
+        
+       
+      </div>
+
+
+</div>
+<footer class="page-footer grey darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-0 right" href="/">Go To Site Me</a>
+            </div>
+          </div>
+        </footer>
+
+ 
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
+
+
+  <script>
+    $( document ).ready(function() {
+   $(".inline-editable").hover(
+        function() {$(this).addClass("editHover"); }, 
+        function() { $(this).removeClass("editHover"); }
+    );
+  
+  var oldText,
+      newText;
+ 
+  $(".inline-editable").bind("click", replaceHTML)
+  
+  function replaceHTML() {
+      // console.log($(".editing"))
+      if(! $(".editing").length){
+        oldText = $(this).html()
+        $(this).addClass("editing");
+        var form = createForm(oldText);
+        $(this).html("")
+                 .html(form);
+        $(this).unbind('click', replaceHTML);
+       }
+    }
+  
+  function createForm(text) {
+    var form = "<form method=\"post\" class=\"inline-editor\">";
+    form += "<input type=\"text\" name=\"body\" class=\"editBox\" value=\"";
+    form += oldText;
+    form += "\" />";
+      form += "<input type=\"hiddin\" name=\"id\" class=\"editBox\" value=\""+datac[i]._id+"";
+    form += oldText;
+    form += "\" /> ";
+    form += "<input type=\"submit\" class=\"btnSave white-text btn \">Save</input>";
+    form+= "</form>";
+    form += "<a href=\"#\" class=\"btnDiscard\">Cancel</a>";
+    return form
+  }
+  
+  $(document.body).on("click", ".btnDiscard", function() {
+        $(this).parent().html(oldText);
+        $(".inline-editable").removeClass("editing");
+        $(".inline-editable").bind('click', replaceHTML);
+        $(".inline-editable").removeClass("editHover");
+  });
+  
+  $(document.body).on("click", ".btnSave", function() {
+       newText = $(this).parent() 
+                         .find(".editBox")
+                         .val();
+       saveChanges(this, newText)
+  });
+  
+  // use enter button
+  $(document.body).on("submit", ".inline-editor", function(e) {
+     e.preventDefault();
+     var newText = $(div).find(".editBox").val()
+     saveChanges(this, newText)
+  })
+
+  function saveChanges(div, newText) {
+    
+    // get data for DB
+    var id =  $(div).parent().attr("id");
+    var dataToUpdate = { id : id, text : newText };
+    console.log(dataToUpdate)
+   
+    $(".inline-editable").removeClass("editing");
+    $(div).parent().html(newText);
+    $(".inline-editable").bind('click', replaceHTML);
+    $(".inline-editable").removeClass("editHover");
+    
+  }
+  
+  
+  
+  
+});
+</script>
+
+
+
+
+ <script >
+
+    $(document).ready(function(){
+            $(".button-collapse").sideNav();
+            $('.datepicker').datepicker();
+            $('input#input_text, textarea#textarea2').characterCounter();
+             
+    });
+
+
+    
+  });
+  
+  </script>
+ 
+ </body>
+</html>

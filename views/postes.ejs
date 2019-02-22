@@ -1,0 +1,42 @@
+<div style="margin-top:5%">
+<h3 class="rey-text text-darken-4">Manage All Postes</h3> 
+</div>
+<div class="left row  " style=" margin-top: 5%; position: fixed; left:3%">
+    <a href="/admin/postes/add" class="psdep col purple lighten-1 m2 waves-effect waves-light btn collection-item" >Add New Post</a><br>
+    <a href="/admin/departs" class="psdep col purple lighten-1 m2 waves-effect waves-light btn collection-item" >Add Department</a><br>
+    
+</div>
+
+<div class="container" style="margin-top:10%;">
+    <div class='row'>
+        <div>            
+            <ul class="collapsible" data-collapsible="accordion">
+             <% for(var i=0; i<postes.departm.length; i++) {%>
+                 <li>
+                    <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    <%=postes.departm[i]%>
+                    <span class="new badge"><%=postes.usersdp[i].length%></span></div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            <%for(var j=0; j<postes.usersdp[i].length; j++) {%>
+                            
+                            <a href="/admin/postes/showpost/<%= postes.usersdp[i][j]._id%>" class="collection-item"><%=postes.usersdp[i][j].title  %></a>
+                            
+                            <%}%>
+                           
+                        </div>
+                    </div>
+                </li>
+             <%}%>
+                    
+                
+            
+            </ul>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+</div>
+</div>

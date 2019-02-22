@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+     <%if (errors){%>
+        <ul class="collection">
+            <% errors.forEach(function(er){%>
+                <li class="collection-item red darken-1"><%= er.msg%></li>
+            <%});%>
+        </ul>
+    <%}%>
+        <form class="col s12 " method='post'  ><br>
+        <h3 class="grey-text text-darken-3 center"> Add  User </h3><br><br>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="username" type="text" class="validate" name='username'>
+            <label for="username">username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="email" type="email" class="validate" name='email'>
+            <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="password" type="password" name='password' class="validate">
+            <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="password2" type="password" name='password2' class="validate">
+            <label for="password">Confirm Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input type="submit" name="addu" value="Add User" class="waves-effect waves-light btn">
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

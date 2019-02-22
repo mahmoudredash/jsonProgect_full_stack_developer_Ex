@@ -1,0 +1,66 @@
+ <div class="slider">
+    <ul class="slides">
+
+             <% for(var i=0; i<dataps.length; i++) {%>
+               <li>
+                <img src="https://i1.wp.com/www.tech-wd.com/wd/wp-content/uploads/2015/02/oa_FreeImages.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                  <h3><%-dataps[i].title%></h3>
+                  <h5 class=" truncate light grey-text text-lighten-3"><%-dataps[i].body%></h5>
+                </div>
+              </li>
+             <%}%>
+
+     
+    
+    </ul>
+
+  </div><br>
+<div class="row" >
+
+
+<% for(var i=0; i<dataps.length; i++) {%>
+
+   <div class="col l4">   
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://i1.wp.com/www.tech-wd.com/wd/wp-content/uploads/2015/02/oa_FreeImages.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%-dataps[i].title%><i class="material-icons right">more_vert</i></span>
+            <p><a href="#"><%=dataps[i].author %></a></p>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i><%-dataps[i].title %></span>
+            <p><%-dataps[i].body%></p>
+            </div>
+        </div>
+     </div>
+
+<%}%>
+</div>
+
+
+
+<div class=" row"><br>
+    <ul class="collapsible" data-collapsible="accordion">
+             <% for(var i=0; i<postes.departm.length; i++) {%>
+                 <li>
+                    <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    <%=postes.departm[i]%>
+                    <span class="new badge"><%=postes.usersdp[i].length%></span></div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            <%for(var j=0; j<postes.usersdp[i].length; j++) {%>
+                            
+                            <a href="/poste/<%= postes.usersdp[i][j]._id%>" class="collection-item"><%=postes.usersdp[i][j].title  %></a>
+                            
+                            <%}%>
+                           
+                        </div>
+                    </div>
+                </li>
+             <%}%>
+            </ul>
+</div>

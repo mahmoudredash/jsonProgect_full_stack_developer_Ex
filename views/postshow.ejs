@@ -1,0 +1,66 @@
+<div class="">
+    <br>
+   <div class="card"> 
+    <div class="row">
+        <div class=" col s12">  
+            <h5 class="center" style="font-style:bold;"><span>Title:</span> <%=datap.title%></h5>
+        </div>   
+    </div>
+    <br><br>
+    <div class="card-panel ">
+        <div class="container flow-text">
+            
+        <%-datap.body%>
+        </div><br><br>
+    </div>
+
+   </div> 
+   <br>
+<%for(var j=0; j<commite.length; j++) {%>
+<%if(commite[j].activet==1){%>
+   <div class="card">
+    <div class="row " >
+   
+         <i class="left text-muted"  style=" padding-left:5px; margin:5px; margin-left:15px;"><%=commite[j].author %></i>
+        <span class="divider" ></span><br>
+        <p  style=" padding:5px;margin:25px; margin-left:15%"> <%=commite[j].body%></p>
+    
+       
+    </div>
+   </div>
+   <%}}%>
+   <br><br>
+   
+   <div class="card">
+    <div class="tttcommit">
+        
+    
+   <div class=" container"><br>
+      <form method="post" class=" col s12">
+        <div class="row ">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" name="author" data-length="10" requird>
+            <label for="input_text">Full Name</label>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="input-field col s6">
+            <input id="input_text" type="email" name="mail" data-length="10" requird>
+            <label for="input_text">email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea2" class="materialize-textarea" name="body" requird data-length="120"></textarea>
+            <label for="textarea2">Textarea</label>
+          </div>
+        </div>
+        <div class="row">
+            <input  class="btn btn-primary" type="submit" value="Add Commit">
+        </div>
+      </form><br><br>
+    </div>
+    </div>
+   </div>
+   
+</div>

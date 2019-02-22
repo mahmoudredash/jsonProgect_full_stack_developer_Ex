@@ -1,0 +1,37 @@
+
+<div class="continar"><br><br>
+<br>
+    <div class='row'>
+        <div class="col s8">
+            <h3 class="indigo-text text-darken-4">Manage users</h3><br>
+        </div>
+    <div class="col s4"><br>
+        <a class="right waves-effect waves-light btn" href="/user/addUser"><i class="material-icons left">person_add</i>Add New User</a>
+    </div>
+    </div>
+    <div class="row"> 
+        <table class="bordered  col m12" >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+        <% for(var i=0; i<allusers.length; i++) {%>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= allusers[i].username %></td>
+                    <td><%= allusers[i].email %></td>
+                    <td><a class="waves-effect teal darken-4 btn" href="/admin/userupdate/<%= allusers[i].id %>">Update</a></td>
+                    <td><a class="waves-effect  deep-orange darken-4 btn" href="/admin/userdelete/<%= allusers[i].id %>">Delete</a></td>
+                </tr>
+        <% } %>
+            </tbody>
+      </table>
+
+    </div>
+</div>

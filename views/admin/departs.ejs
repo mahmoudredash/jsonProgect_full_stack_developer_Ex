@@ -1,0 +1,47 @@
+
+
+
+<div class="row">
+    <form class="col s12 " method='post'  ><br>
+        <h3 class="grey-text text-darken-3 center"> Add  Department </h3><br><br>
+        <div class="row center">
+            <div class="input-field col s6">
+            <input id="depart" type="text" class="validate" name='departname'>
+            <label for="depart">Department Name</label>
+            </div>
+            <div class="input-field col s6">
+            <input type="submit" name="addu" value="Add Department" class="waves-effect waves-light btn">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+
+<div class="row"> 
+<% if (allDepart){%>
+        <table class="bordered  col m12   " >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+    <!-- complit Code-->
+    <% for(var i=0; i<allDepart.length; i++){ %>
+                <tr>
+                    <td class="" ><h6><%= allDepart[i].name %></h6></td>
+                    <td class=""><%= allDepart[i].author %></td>
+                    <td class=""><%= allDepart[i].date %></button></td>
+                    <td class=""><a href="/admin/departs/<%= allDepart[i].id %>">X</a></td>
+                    </tr>
+                    <%}%>
+            </tbody>
+      </table>
+<%}%>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="" style="margin-top:5%">
+
+<h4 class="center brown-text text-lighten-1">Commit MangMent</h4>
+    <div class="card col s12" style="min-height: 500px">
+        
+
+    <% for(var i=0; i<datac.length; i++) {%>    
+        <div class="row col s12 card-content  ">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                    <div class="card-content">
+                    <span class="inline-editable card-title grey-text text-darken-4" id="title"><%=datac[i].author%></span>
+                    <p class="inline-editable" id="text"><%=datac[i].body%>></p>
+                    </div>
+                    <div class="card-action">
+                    <a href="/admin/commites/updatex/<%=datac[i]._id%>">accept Commit</a>
+                    <a href="/admin/commites/remove/<%=datac[i]._id%>">Deleted</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%}%>
+    </div>
+
+</div>
+
+

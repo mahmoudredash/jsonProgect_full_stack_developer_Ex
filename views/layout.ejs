@@ -1,0 +1,40 @@
+
+
+<%if (!adm) {%>
+<%- include('partials/header')%>
+
+      
+
+
+        <%if (success_msg){%>
+                <% success_msg.forEach(function(msg){%>
+                <li class="collection-item light-green darken-4 "><%= msg%></li>
+                <%});%>
+        <%} if(error_msg){ %>
+                <% error_msg.forEach(function(msg){%>
+                        <li class="collection-item red darken-4 "><%= msg%></li>
+                <%});%>
+        <%}%>
+
+        <%- body %>
+
+<%- include('partials/footer')%>
+
+<%}else{%>
+<%- include('partials/headerAdmin')%>
+        
+        
+
+        <%if (success_msg){%>
+        <% success_msg.forEach(function(msg){%>
+        <li class="collection-item light-green darken-4 "><%= msg%></li>
+        <%});%>
+        <%} if(error_msg){ %>
+                <% error_msg.forEach(function(msg){%>
+                        <li class="collection-item red darken-4 "><%= msg%></li>
+                <%});%>
+        <%}%>
+         <%- body %>
+
+<%- include('partials/footerAdmin')%>
+<%}%>

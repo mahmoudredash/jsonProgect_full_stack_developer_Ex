@@ -1,0 +1,63 @@
+
+
+<div class="continar"><br><br>
+
+    
+  
+    <div class="row">
+     <%if (errors){%>
+        <ul class="collection">
+            <% errors.forEach(function(er){%>
+                <li class="collection-item red darken-1"><%= er.msg%></li>
+            <%});%>
+        </ul>
+    <%}%>
+        <form class="col s12 " method='post' action='/admin/userupdate'  ><br>
+        <h3 class="indigo-text text-darken-4 text-darken-3 center"> Update  User </h3><br><br>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="id" type="text" disabled value="<%= userdata.id %>"  class="validate" name='id'>
+            <label for="id">Id</label>
+            </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="username" type="text" class="validate" value="<%= userdata.username %>" name='username'>
+            <label for="username">username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input id="email" type="email" class="validate" value="<%= userdata.email %>" name='email'>
+            <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m10 s8">
+            <input id="password" type="password" name='password' value="<%= userdata.password %>" class="validate">
+            <label for="password">Password</label>
+            </div>
+            <div class="switch col m2 s4">
+                <label>
+                    Off
+                <input type="checkbox" name="changpass" value='1'>
+                <span class="lever"></span>
+                    On
+                </label>
+            </div>
+        </div>
+         <div class="row">
+         <label for="date">Date</label>
+            <div class="  input-field col s12">
+            <input id="date" type="date" name='date' value="<%= userdata.date %>" class="validate datepicker">
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input type="submit" name="updateuser" value="Update User" class="waves-effect waves-light btn">
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
